@@ -11,10 +11,7 @@ var SongQueue = Songs.extend({
       }
     }, this);
     this.on('ended', function(song) {
-      console.log('song queue ended');
       this.at(0).dequeue();
-      //this.remove(this.at(0));
-      // this.currentSong.set(songQueue.at(0));
       if (this.length > 0) {
         this.playFirst();
       }
@@ -22,8 +19,6 @@ var SongQueue = Songs.extend({
   },
   playFirst: function() {
     this.at(0).play();
-    // this.currentSong.set(songQueue.at(0))
-    // fire off the change:currentSong event
   }
 
 });
